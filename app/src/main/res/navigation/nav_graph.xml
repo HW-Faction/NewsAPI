@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/breakingNewsFragment"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="myapp.newsapp.ui.fragments.BreakingNewsFragment"
+        tools:layout="@layout/fragment_breaking_news"
+        android:label="BreakingNewsFragment" >
+        <action
+            android:id="@+id/breakingNewsFragment_to_article_fragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="myapp.newsapp.ui.fragments.BookmarkFragment"
+        android:label="BookmarkFragment" >
+        <action
+            android:id="@+id/action_BookmarkFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="myapp.newsapp.ui.fragments.ArticleFragment"
+        android:label="ArticleFragment" >
+        <argument
+            android:name="article"
+            app:argType="myapp.newsapp.models.Article" />
+    </fragment>
+
+
+</navigation>
